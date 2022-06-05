@@ -6,7 +6,7 @@ const reset = document.querySelector(".reset");
 //função para pular recebendo um evento para pegar a telca Espaço..
 const jump = (e) => {
   //Verificando se a tecla é o espaço
-  if (e.keyCode === 32) {
+  if (e.keyCode === 32 && TouchEvent === true) {
     mario.classList.add("jump");
   }
 
