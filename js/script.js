@@ -2,19 +2,22 @@ const mario = document.querySelector(".mario");
 const pipe = document.querySelector(".pipe");
 const clouds = document.querySelector(".clouds");
 const reset = document.querySelector(".reset");
+const body = document.querySelector("body");
 
 //função para pular recebendo um evento para pegar a telca Espaço..
-const jump = (e) => {
+const jump = () => {
   //Verificando se a tecla é o espaço
-  if (e.keyCode === 32 || ontouchstart in window) {
-    mario.classList.add("jump");
-  }
+  mario.classList.add("jump");
 
   //função para remover a classe Jump, para o mario voltar a pular
   setTimeout(() => {
     mario.classList.remove("jump");
   }, 600);
 };
+
+body.addEventListener("touchstart", () => {
+  jump();
+});
 
 //Criando função para verificar quando é game-over.
 const loop = setInterval(() => {
