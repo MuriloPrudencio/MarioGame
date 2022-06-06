@@ -15,6 +15,7 @@ const jump = () => {
   }, 600);
 };
 
+//Escutando o evento de Touch..
 body.addEventListener("touchstart", () => {
   jump();
 });
@@ -47,8 +48,10 @@ const loop = setInterval(() => {
   }
 }, 10);
 
+//Reiniciando o game após o game over...
+
 const reiniciar = reset.addEventListener("click", () => {
-  location.reload();
+  window.location.reload();
 });
 
 //Criando o evento para o Mario pular
